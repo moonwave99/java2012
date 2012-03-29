@@ -18,6 +18,7 @@ Come abbiamo notato in aula, all'interno di ```ShapePane``` vengono invocati esc
 Altro spunto: nell'interfaccia è richiesto il metodo ```contains()```, ed il programma gira sebbene tale metodo non sia esplicitamente stato implementato in nessuna porzione del codice fornito: questo perché ```Ellipse2D``` è già in possesso di tale metodo, quindi i requisiti di implementazione sono soddisfatti!
 
 Semplici sviluppi ulteriori che vi invito a fare:
+
 * classi Square e ColoredSquare che disegnino un **quadrato**;
 * classe Triangle che disegni un **triangolo equilatero** - pensate a quanto visto nella parte finale della lezione!
 
