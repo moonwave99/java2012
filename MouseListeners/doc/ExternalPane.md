@@ -42,7 +42,9 @@ Il pannello è stato quindi dotato dei seguenti:
 	public void setDragging(boolean dragging){ this.dragging = dragging; }
 	
 **Vantaggi**:
+
 * classe disaccoppiata dal pannello -> è utilizzabile da più pannelli potenzialmente;
 
 **Svantaggi**:
+
 * classe esterna -> non può accedere a campi/metodi privati -> il pannello deve essere dotato di getter / setter ulteriori;
