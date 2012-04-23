@@ -75,7 +75,7 @@ Finché il ```Thread``` è vivo, vengono eseguite a ripetizione le istruzioni de
 
 L'implementazione di questi 4 metodi [uno proprio dell'interfaccia, gli altri tre suggeriti] è sufficiente per coprire le nostre esigenze in tema di ```Thread```.
 
-Il programma proposto è il movimento di moto circolare uniforme di un cerchio lungo una circonferenza: provate a modificare il programma cambiando la legge oraria del cerchio con [altre traiettorie](http://it.wikipedia.org/wiki/Curva_a_farfalla_(trascendentale)).
+Il programma proposto è il movimento di moto circolare uniforme di un cerchio lungo una circonferenza: provate a modificare il programma cambiando la legge oraria del cerchio con [altre traiettorie](http://it.wikipedia.org/wiki/Curva_a_farfalla).
 
 Buon lavoro,
 
