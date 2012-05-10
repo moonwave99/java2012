@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.awt.geom.*;
 import javax.swing.*;
 
-public class AccelerazionePane extends JPanel implements Runnable
+public class GrowPane extends JPanel implements Runnable
 {
 
 	protected boolean didInit;				// controllo sul metodo init;
@@ -12,7 +12,9 @@ public class AccelerazionePane extends JPanel implements Runnable
 
 	protected Circle circle;
 
-	public AccelerazionePane()
+	protected int time;
+
+	public GrowPane()
 	{
 
 		setBackground(Color.WHITE);
@@ -33,7 +35,25 @@ public class AccelerazionePane extends JPanel implements Runnable
 			public void keyPressed(KeyEvent ke)
 			{
 
+				switch(ke.getKeyCode())
+				{
 
+					case KeyEvent.VK_R:
+
+						circle.randomizeDirection();
+
+						break;
+
+					case KeyEvent.VK_SPACE:
+
+						if(isRunning())
+							stop();
+						else
+							start();
+
+						break;
+
+				}
 
 				repaint();
 
@@ -50,8 +70,10 @@ public class AccelerazionePane extends JPanel implements Runnable
 
 		circle =  new Circle(
 			new Point2D.Double(getWidth() * 0.5, getHeight() * 0.5),
-			50
+			0
 		);
+
+		circle.randomizeDirection();
 
 		didInit = true;
 
@@ -66,6 +88,7 @@ public class AccelerazionePane extends JPanel implements Runnable
 
 			th = new Thread(this);
 			th.start();
+			System.out.println("Thread partito.");
 
 		}
 
@@ -91,7 +114,18 @@ public class AccelerazionePane extends JPanel implements Runnable
 		while(isRunning())
 		{
 
+			circle.width = (Math.sin(time * Math.PI / 180 - Math.PI/2) + 1) * 0.5 * getWidth();
+			circle.height = (Math.sin(time * Math.PI / 180 - Math.PI/2) + 1) * 0.5 * getHeight();
+			circle.x = getWidth() * 0.5 - circle.getRadius();
+			circle.y = getHeight() * 0.5 - circle.getRadius();
 
+			time ++;
+
+			if(time % 50 == 0){
+
+				circle.randomizeDirection();
+
+			}
 
 			repaint();
 
@@ -135,7 +169,7 @@ public class AccelerazionePane extends JPanel implements Runnable
 	public static void main(String[] args)
 	{
 
-		new AccelerazionePane();
+		new GrowPane();
 
 	}
 

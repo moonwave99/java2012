@@ -57,4 +57,12 @@ public class Circle extends Ellipse2D.Double
 
 	}
 
+	public void randomizeDirection()
+	{
+
+		this.vx = Math.random() * 2 -1;
+		this.vy = Math.random() * 2 -1;
+
+	}
+
 }
