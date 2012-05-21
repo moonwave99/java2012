@@ -14,8 +14,8 @@ public class ImgPane extends JPanel
 	// trasformazione di rotazione
 	protected AffineTransform rotateTransform;
 
-	// salvo la path iniziale di navigazione in una costante statica:
-	public static final String START_PATH = "/Users/diegocaponera/Desktop";
+	// salvo la path iniziale di navigazione in una costante statica - mi raccomando ridefinitela!:
+	public static final String START_PATH = "/Users/__myusername__/Desktop";
 
 	public ImgPane()
 	{
