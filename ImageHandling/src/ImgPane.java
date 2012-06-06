@@ -13,6 +13,7 @@ public class ImgPane extends JPanel
 
 	// trasformazione di rotazione
 	protected AffineTransform rotateTransform;
+	protected int rotationCount;
 
 	// salvo la path iniziale di navigazione in una costante statica - mi raccomando ridefinitela!:
 	public static final String START_PATH = "/Users/__myusername__/Desktop";
@@ -103,8 +104,11 @@ public class ImgPane extends JPanel
 	protected void updateCanvas()
 	{
 
+		int w = img.getWidth(null);
+		int h = img.getHeight(null);
+
 		// aggiorno le dimensioni del pannello in funzione della dimensione dell'immagine
-		setPreferredSize(new Dimension(img.getWidth(null), img.getHeight(null)));
+		setPreferredSize( new Dimension(w, h) );
 
 		// riaggiorno il frame di conseguenza!
 		f.pack();
@@ -132,6 +136,9 @@ public class ImgPane extends JPanel
 
 		}
 
+		rotateTransform = new AffineTransform();
+		rotationCount = 0;
+
 		// adatto il frame all'immagine
 		updateCanvas();
 
@@ -149,10 +156,15 @@ public class ImgPane extends JPanel
 		if(img == null)
 			return;
 
+		int w = img.getWidth(null);
+		int h = img.getHeight(null);
+
+		rotationCount++;
+
 		rotateTransform.rotate(
 			Math.PI/2,
-			getWidth() * 0.5,
-			getHeight() * 0.5
+			w * 0.5,
+			h * 0.5
 		);
 
 		// adatto il frame all'immagine
@@ -165,6 +177,7 @@ public class ImgPane extends JPanel
 	public static void main(String[] args)
 	{
 
+		System.setProperty("apple.laf.useScreenMenuBar","true");
 		new ImgPane();
 
 	}
