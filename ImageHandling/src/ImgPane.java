@@ -83,6 +83,11 @@ public class ImgPane extends JPanel
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D)g;
 
+		g2.setRenderingHint(
+			RenderingHints.KEY_ANTIALIASING,
+			RenderingHints.VALUE_ANTIALIAS_ON
+		);
+
 		// applico la matrice associata alla trasformazione al contesto grafico [di default è l'identità!]
 		g2.setTransform(rotateTransform);
 
