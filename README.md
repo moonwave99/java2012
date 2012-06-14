@@ -21,6 +21,7 @@ Questo è l'elenco degli argomenti visti a lezione, è necessario prendere visio
 * Classi e oggetti: definizione, campi d'istanza, modificatori d'accesso, metodi costruttori, getter e setter; metodi ```toString()``` ed ```equals()```; ```this``` keyword;
 * Passaggio per riferimento, passaggio per valore;
 * Ereditarietà, ```super``` keyword;
+* Campi e metodi statici, ```final``` keyword;
 * Classi astratte;
 * Interfacce: keyword ```implements``` comparata ad ```extends```;
 * Classi interne, classi interne locali, classi interne anonime;
